@@ -4,6 +4,7 @@ import { action } from '@ember/object';
 
 export default class ApplicationController extends Controller {
   @tracked tasks = [];  // Lista de tarefas
+  @tracked taskTitle = '';
 
   taskTitle = ''; // Título da tarefa a ser adicionada
 
@@ -18,7 +19,6 @@ export default class ApplicationController extends Controller {
   addTask() {
     if (this.taskTitle.trim() !== '') {
       this.tasks = [...this.tasks, { title: this.taskTitle, completed: false }];
-
       this.taskTitle = '';
     }
   }

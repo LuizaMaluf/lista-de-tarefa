@@ -1,15 +1,20 @@
-<h1>Task Manager</h1>
+<div>
+    <center>
+        <h1>Task Manager</h1>
+        <!-- Campo de entrada para a tarefa -->
+        <input 
+            type="text" 
+            placeholder="Enter task title..." 
+            value={{this.taskTitle}} 
+            {{on "input" this.updateTaskTitle}} 
+        />
+        <button type="button" {{on "click" this.addTask}}>Add Task</button>
+    </center>
+</div>
 
-<!-- Campo de entrada para a tarefa -->
-<input 
-  type="text" 
-  placeholder="Enter task title..." 
-  value={{this.taskTitle}} 
-  {{on "input" this.updateTaskTitle}} 
-/>
-<button type="button" {{on "click" this.addTask}}>Add Task</button>
-
+<div>
 <h2>Task List:</h2>
 
 <!-- Componente TaskList exibindo a lista de tarefas -->
 <TaskList @tasks={{this.tasks}} @toggleTaskCompletion={{this.toggleTaskCompletion}} />
+</div>
