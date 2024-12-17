@@ -1,0 +1,12 @@
+<ul>
+  {{#each @tasks as |task index|}}
+    <li>
+      <input 
+        type="checkbox" 
+        checked={{task.completed}} 
+        {{on "change" (fn this.toggleTaskCompletion index)}} 
+      />
+      {{task.title}}
+    </li>
+  {{/each}}
+</ul>

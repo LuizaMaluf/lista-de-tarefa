@@ -1,1 +1,14 @@
-/* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
+.task-item {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.task-item input {
+  margin-right: 10px;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: gray;
+}

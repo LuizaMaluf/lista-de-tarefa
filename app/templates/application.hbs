@@ -1,7 +1,15 @@
-{{page-title "TaskManager"}}
+<h1>Task Manager</h1>
 
-{{outlet}}
+<!-- Campo de entrada para a tarefa -->
+<input 
+  type="text" 
+  placeholder="Enter task title..." 
+  value={{this.taskTitle}} 
+  {{on "input" this.updateTaskTitle}} 
+/>
+<button type="button" {{on "click" this.addTask}}>Add Task</button>
 
-{{! The following component displays Ember's default welcome message. }}
-<WelcomePage />
-{{! Feel free to remove this! }}
+<h2>Task List:</h2>
+
+<!-- Componente TaskList exibindo a lista de tarefas -->
+<TaskList @tasks={{this.tasks}} @toggleTaskCompletion={{this.toggleTaskCompletion}} />
